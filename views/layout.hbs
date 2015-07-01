@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>{{title}}</title>
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="app/styles/main.css">
+</head>
+<body>
+  {{{body}}}
+   <div id="app">
+       <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+       </div>
+   </div>
+   <footer class="container-fluid">
+    {{> footer}}
+  </footer>
+
+<!-- COMMON TEMPLATE -->
+  <script id="common-template" type="x-handlebars-template" name="common">
+  <img class="img-responsive hidden-xs" src="app/images/milk.jpg" alt="Chania">
+      
+      <div id="popup" class="container-fluid"></div>
+
+      <div class="container-fluid">
+        <div class="row">
+
+        <div class="col-sm-1"></div>
+
+          <div class="col-sm-4">
+                <div class="container-fluid box">
+                  <h4>Daily Dairy Entry</h4>
+                    <form role="form">
+                      <div class="form-group">
+                        <label for="entryDate">Date</label>
+                        <input type="date" id="entryDate"  placeholder="dd-mm-yyyy">
+                      </div>
+                     <div class="form-group">
+                        <label for="entryLabel">Label</label>
+                        <input type="text" class="form-control" id="entryLabel">
+                      </div>
+                      <div class="form-group">
+                        <label for="entryText">Text</label>
+                        <textarea class="form-control" rows="5" id="entryText" placeholder="Enter Detail here"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-default" id="submitEntry">Submit</button>
+                  </form>
+                </div>
+          </div>
+
+          <div class="col-sm-2"></div>
+
+          <div class="col-sm-4">
+                <div class="container-fluid box">
+                  <h4>Filter Dairy Entries</h4>
+                    <form role="form">
+                        <div class="checkbox">
+                          <label><input id="byDate" type="checkbox" value="">By Date</label>
+                        </div>
+                        <div class="form-group">
+                          <label for="sDate">Start Date</label>
+                          <input type="date" id="sDate"  placeholder="dd-mm-yyyy">
+                        </div>
+                        <div class="form-group">
+                          <label for="eDate">End Date</label>
+                          <input type="date" id="eDate"  placeholder="dd-mm-yyyy">
+                        </div>
+                        <div class="checkbox">
+                          <label><input id="byLabel" type="checkbox" value="">By Label</label>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="label">
+                        </div>
+                        <div class="checkbox">
+                          <label><input id="byText" type="checkbox" value="">By Text</label>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="text">
+                        </div>
+                   </form> 
+                   <button type="button" id="recentEntry" class="btn btn-info">Get the latest entry</button>   
+                </div>
+          </div>
+          <div class="col-sm-1"></div>
+
+        </div>
+      </div>
+  <div id="box" class="container-fluid"></div>
+  <div id="wrapper"></div>
+  </script>
+<!-- COMMON TEMPLATE END -->
+
+  <script id="dairy-template" type="x-handlebars-template" name="dairy">
+    <div class="container-fluid">
+        <div class="row">
+            \{{#each []}}
+                <div class="col-sm-2" id="icon">
+                    <a class="thumbnail dairy-detail" data-id="\{{this.id}}">
+                      <span>\{{this.label}}</span>                   
+                    </a>
+                </div>
+            \{{/each}}
+        </div>
+    </div>
+  </script>
+
+  <script  id="item-detail-template" type="x-handlebars-template">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-2"></div>
+            <div class="container-fluid col-sm-8 popup-page">    
+               <button type="button" id="close-Detail" class="btn btn-warning">close</button>
+               <h4>\{{date}}</h4>
+               <h4>\{{label}}</h4>
+               <p>\{{text}}</p>
+            </div>
+          <div class="col-sm-2"></div>
+      </div>
+    </div>
+  </script>
+
+  <script id="spinner-template" type="x-handlebars-template">
+       <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+       </div>
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.0/backbone-min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="bower_components/traceur/traceur.js"></script>
+  <script src="bower_components/es6-module-loader/dist/es6-module-loader.js"></script>
+  <script>System.import('app/scripts/main')</script>
+
+
+</body>
+</html>

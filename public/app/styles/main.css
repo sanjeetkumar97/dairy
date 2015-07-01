@@ -1,0 +1,110 @@
+body {
+  background-color: #FFFFFF;
+ 
+}
+
+#wrapper{
+  margin-top: 10px;
+  
+}
+
+footer{
+  text-align: center;
+  color: #FFFFFF;
+  height:35px;
+  background-color: #0198d7;
+}
+
+#popup{
+  margin-top: 0px;
+  width:100%;
+  position: fixed;
+  z-index: 2000;
+}
+
+#box{
+  margin-top: 10px;
+  width:100%;
+  position:fixed;
+  z-index: 2001;  
+}
+
+.popup-page{
+  background-color: #fcf1bf;
+  border:1px solid #ffa200;
+  box-shadow: 2px 2px 5px;
+}
+
+.box{
+  margin-top: 10px;
+  background-color: #c7c7c7;
+  box-shadow: 1px 1px 3px #686868 ;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border:1px solid #CCCCCC;
+}
+
+.thumbnail {
+  background-color: #d2d2d2;
+  border:1px solid #0198d7;
+}
+
+
+
+
+
+
+
+
+.spinner {
+  margin: 1px auto;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #FF0000;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
